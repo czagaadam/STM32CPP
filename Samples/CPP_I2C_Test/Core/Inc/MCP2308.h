@@ -3,7 +3,7 @@
  *
  *  Author: Adam Czaga czagaadam@gmail.com
  *
- *  MCP9800 i2c port exp. class
+ *  MCP2308 i2c port exp. class
  *
  */
 

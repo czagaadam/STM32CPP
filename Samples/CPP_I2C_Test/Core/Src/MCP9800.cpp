@@ -1,8 +1,10 @@
 /*
  * MCP9800.cpp
  *
- *  Created on: Aug 3, 2024
- *      Author: acer1
+ *  Author: Adam Czaga czagaadam@gmail.com
+ *
+ *  MCP9800 i2c temp sensor class
+ *
  */
 
 #include "MCP9800.h"

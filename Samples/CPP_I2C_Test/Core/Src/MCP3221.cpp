@@ -3,7 +3,7 @@
  *
  *  Author: Adam Czaga czagaadam@gmail.com
  *
- *  MCP9800 i2c adc class
+ *  MCP3221 i2c adc class
  *
  */
 
