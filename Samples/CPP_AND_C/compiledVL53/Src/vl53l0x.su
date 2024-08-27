@@ -1,0 +1,8 @@
+../Src/vl53l0x.c:27:15:isDirectMeasurementReady	16	static
+../Src/vl53l0x.c:39:15:isMeasurementReady	24	static
+../Src/vl53l0x.c:51:9:VL53L0X_DirectMeasureSingle	48	static
+../Src/vl53l0x.c:80:9:VL53L0X_MeasureSingle	48	static
+../Src/vl53l0x.c:109:9:VL53L0X_MeasureSingleCustomAddress	48	static
+../Src/vl53l0x.c:139:9:VL53L0X_CustomAddressInit	32	static
+../Src/vl53l0x.c:219:9:VL53L0X_DirectInit	24	static
+../Src/vl53l0x.c:304:9:VL53L0X_Init	32	static

@@ -1,0 +1,14 @@
+../Src/vl53l0xHandlerClass.c:29:6:VL53L0X_InitHandlerClass	16	static
+../Src/vl53l0xHandlerClass.c:38:15:VL53L0X_APPSGetDevice	16	static
+../Src/vl53l0xHandlerClass.c:43:15:VL53L0X_APPSGetLastDevice	16	static
+../Src/vl53l0xHandlerClass.c:48:9:VL53L0X_APPSGetDeviceIndexer	4	static
+../Src/vl53l0xHandlerClass.c:53:6:VL53L0X_APPSConfigDevice	392	static
+../Src/vl53l0xHandlerClass.c:67:6:VL53L0X_APPSDeleteDevice	4	static
+../Src/vl53l0xHandlerClass.c:72:6:VL53L0X_APPStart	4	static
+../Src/vl53l0xHandlerClass.c:76:6:VL53L0X_APPStartWithCustomAddress	16	static
+../Src/vl53l0xHandlerClass.c:81:6:VL53L0X_APPStartLastDevice	8	static
+../Src/vl53l0xHandlerClass.c:86:6:VL53L0X_APPSResetNodes	16	static
+../Src/vl53l0xHandlerClass.c:96:6:VL53L0X_APPSSetAddress	24	static
+../Src/vl53l0xHandlerClass.c:112:6:VL53L0X_APPSetLastDeviceAddress	16	static
+../Src/vl53l0xHandlerClass.c:128:10:VL53L0X_APPSNodeMeasure	24	static
+../Src/vl53l0xHandlerClass.c:134:10:VL53L0X_APPSLastNodeMeasure	16	static
