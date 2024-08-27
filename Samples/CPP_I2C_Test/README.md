@@ -123,7 +123,7 @@ sprintf(ConvertBuffer, "temp: %.6f C", f_tempC); // MCU settings float printf en
 //printf("Result is: %d.%d", i/10, i%10);
 UART_SendString(ConvertBuffer);
 HAL_Delay(500);
-		/*********************************************/
+/*********************************************/
 ```
 
 Reading MCP9800 temp. sensor  
