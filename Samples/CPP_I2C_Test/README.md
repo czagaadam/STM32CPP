@@ -1,10 +1,30 @@
 # HOW TO USE I2C LIBRARY
 
 👀 Usage
+
+Define objects outside main function
 ```javascript
-	Led1 = Dout(GPIOD, GPIO_PIN_9, GPIO_PIN_RESET);
-	Btn1 = Din(GPIOD, GPIO_PIN_10);
-	Btn1.set_isr_cb(Btn1_call_back);
+Dout Led1;
+Din Btn1;
+```
+
+Define callback functions
+```javascript
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	Btn1.trigger_pin(GPIO_Pin);
+}
+
+void Btn1_call_back(void) {
+	Led1.write(GPIO_PIN_SET);
+}
+```
+
+
+Call constructor in main
+```javascript
+Led1 = Dout(GPIOD, GPIO_PIN_9, GPIO_PIN_RESET);
+Btn1 = Din(GPIOD, GPIO_PIN_10);
+Btn1.set_isr_cb(Btn1_call_back);
 ```
 
 Reading MCP9800 temp. sensor  
