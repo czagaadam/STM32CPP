@@ -2,11 +2,9 @@
 
 👀 Usage
 ```c++
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
+	Led1 = Dout(GPIOD, GPIO_PIN_9, GPIO_PIN_RESET);
+	Btn1 = Din(GPIOD, GPIO_PIN_10);
+	Btn1.set_isr_cb(Btn1_call_back);
 ```
 
 Reading MCP9800 temp. sensor  
