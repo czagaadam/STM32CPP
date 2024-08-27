@@ -2,7 +2,7 @@
 
 👀 Usage
 
-Define objects outside main function
+Define GPIO objects outside main function
 ```javascript
 Dout Led1;
 Din Btn1;
@@ -20,7 +20,7 @@ void Btn1_call_back(void) {
 ```
 
 
-Call constructor in main
+Call constructors and assign callback to object in main
 ```javascript
 Led1 = Dout(GPIOD, GPIO_PIN_9, GPIO_PIN_RESET);
 Btn1 = Din(GPIOD, GPIO_PIN_10);
