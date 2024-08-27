@@ -1,7 +1,7 @@
 # HOW TO USE I2C LIBRARY
 
 👀 Usage
-```javascript
+```cpp
 import Component from 'my-project'
 
 function App() {
