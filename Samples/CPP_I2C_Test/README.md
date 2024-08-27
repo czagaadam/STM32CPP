@@ -1,7 +1,7 @@
 # HOW TO USE I2C LIBRARY
 
 👀 Usage
-```c++
+```javascript
 	Led1 = Dout(GPIOD, GPIO_PIN_9, GPIO_PIN_RESET);
 	Btn1 = Din(GPIOD, GPIO_PIN_10);
 	Btn1.set_isr_cb(Btn1_call_back);
