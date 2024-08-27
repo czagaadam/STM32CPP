@@ -1,14 +1,13 @@
 # HOW TO USE I2C LIBRARY
 
 👀 Usage
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
-
+```javascript
 import Component from 'my-project'
 
 function App() {
   return <Component />
 }
-🧭 Roadmap
+```
 
 Reading MCP9800 temp. sensor  
 ![temp](https://github.com/user-attachments/assets/7af84153-15ee-4322-9660-dc6660208a99)
