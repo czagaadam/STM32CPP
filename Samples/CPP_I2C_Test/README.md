@@ -109,6 +109,23 @@ I2CPortExp = MCP2308(&I2C_3);
 I2CADC = MCP3221(&I2C_3);
 ```
 
+Call directly I2Cbase class functions or sensor class(MCP9800,MCP2308,MCP3221) functions
+```javascript
+/*****************TEMP Sensor*****************/
+//I2C_3.write(MCP9800ADDR, readtemp, sizeof(readtemp), 0);	//call directly I2C base class functions
+//I2C_3.bus_wait();						//call directly I2C base class functions
+//I2C_3.read(MCP9800ADDR, temp, sizeof(temp), 0);		//call directly I2C base class functions
+//uint16_t i16_temp = I2CADC1.get_temp();
+float f_tempC;
+f_tempC = I2CTsensor.get_temp_f();
+char ConvertBuffer[30] = "";
+sprintf(ConvertBuffer, "temp: %.6f C", f_tempC); // MCU settings float printf enabled
+//printf("Result is: %d.%d", i/10, i%10);
+UART_SendString(ConvertBuffer);
+HAL_Delay(500);
+		/*********************************************/
+```
+
 Reading MCP9800 temp. sensor  
 ![temp](https://github.com/user-attachments/assets/7af84153-15ee-4322-9660-dc6660208a99)
 
