@@ -1,5 +1,5 @@
 # STM32CPP
-STM32 C++
+🌟 About the Project
 
 # VL53L0x
 VL53L0x distance sensor library is uploaded. VL53L0x is written in C, in this simple example you can see how to use the library and mix with C++ code.
