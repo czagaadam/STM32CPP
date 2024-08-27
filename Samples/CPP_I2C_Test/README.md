@@ -1,7 +1,12 @@
-# HOW TO USE I2C LIBRARY
+# HOW TO USE GPIO/I2C LIBRARY
+
+🌟 About the Project
+
+
 
 👀 Usage
 
+# GPIObase class
 Define GPIO objects outside main function
 ```javascript
 Dout Led1;
@@ -27,6 +32,7 @@ Btn1 = Din(GPIOD, GPIO_PIN_10);
 Btn1.set_isr_cb(Btn1_call_back);
 ```
 
+# I2Cbase class
 Reading MCP9800 temp. sensor  
 ![temp](https://github.com/user-attachments/assets/7af84153-15ee-4322-9660-dc6660208a99)
 
