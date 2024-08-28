@@ -128,7 +128,7 @@ I2CPortExp = MCP2308(&I2C_3);
 I2CADC = MCP3221(&I2C_3);
 ```
 
-Call directly I2Cbase class functions or sensor class(MCP9800,MCP2308,MCP3221) functions
+Call Sensor class(MCP9800,MCP2308,MCP3221) functions
 ```javascript
 /*****************TEMP Sensor*****************/
 //I2C_3.write(MCP9800ADDR, readtemp, sizeof(readtemp), 0);	//call directly I2C base class functions
@@ -144,6 +144,24 @@ UART_SendString(ConvertBuffer);
 HAL_Delay(500);
 /*********************************************/
 ```
+
+Sensor class functions ultilize I2Cbase class functions
+```javascript
+#include "MCP9800.h"
+#include "I2Cbase.h"
+
+uint8_t configtemp[2] = {ACCESS_CONFIG , MCP9800ARES};
+uint8_t readtemp[1] = {READ_TEMP};
+uint8_t temp[2];
+
+uint16_t MCP9800::get_temp(void) {
+	_i2cbase->write(MCP9800ADDR, readtemp, sizeof(readtemp), 0);
+	//_i2cbase->bus_wait();
+	_i2cbase->read(MCP9800ADDR, temp, sizeof(temp), 0);
+	return ((temp[0]<<8)|temp[1]);
+}
+```
+
 
 Reading MCP9800 temp. sensor  
 ![temp](https://github.com/user-attachments/assets/7af84153-15ee-4322-9660-dc6660208a99)
