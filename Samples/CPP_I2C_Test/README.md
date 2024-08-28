@@ -2,6 +2,20 @@
 
 🌟 About the Project
 
+👀 Project structure
+
+-CPPLib
+   ¦--GPIObase
+   ¦--I2Cbase
+   ¦--ISRbase
+-Samples
+   ¦--CPP_AND_C
+   	¦--Core
+    	  ¦--src
+   	      ¦--CPP_I2C_Test.cpp
+	      ¦--MCP2308.cpp
+	      ¦--MCP3221.cpp
+	      ¦--MCP9800.cpp
 
 
 👀 Usage
