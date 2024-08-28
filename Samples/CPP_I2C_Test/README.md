@@ -2,25 +2,42 @@
 
 🌟 About the Project
 
-👀 Project structure
 
--CPPLib
+📁 Project Structure
 
-   ¦--GPIObase
-   
-   ¦--I2Cbase
-   
-   ¦--ISRbase
+```
+.
+├── CPPLib
+│   ├── GPIObase
+│   │   └── Core
+│   │       ├── src
+│   │       │   └── GPIObase.cpp
+│   │       └── inc
+│   │           └── GPIObase.h
+│   ├── I2Cbase
+│   │   └── Core
+│   │       ├── src
+│   │       │   └── I2Cbase.cpp
+│   │       └── inc
+│   │           └── I2Cbase.h
+│   └── ISRbase
+│       └── ISRbase.h
+│       
+└── Samples
+    └── CPP_I2C_Test
+        └── Core
+            ├── src
+            │   ├── CPP_I2C_Test.cpp
+            │   ├── MCP2308.cpp
+            │   ├── MCP3221.cpp
+            │   └── MCP9800.cpp
+            └── inc
+                ├── CPP_I2C_Test.h
+                ├── MCP2308.h
+                ├── MCP3221.h
+                └── MCP9800.h
 
-   
--Samples
-   ¦--CPP_AND_C
-   	¦--Core
-    	  ¦--src
-   	      ¦--CPP_I2C_Test.cpp
-	      ¦--MCP2308.cpp
-	      ¦--MCP3221.cpp
-	      ¦--MCP9800.cpp
+```
 
 
 👀 Usage
