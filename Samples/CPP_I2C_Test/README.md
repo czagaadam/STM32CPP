@@ -154,11 +154,15 @@ uint8_t configtemp[2] = {ACCESS_CONFIG , MCP9800ARES};
 uint8_t readtemp[1] = {READ_TEMP};
 uint8_t temp[2];
 
-uint16_t MCP9800::get_temp(void) {
+float MCP9800::get_temp_f(void) {
+	float f_tempC, f_tempF;
 	_i2cbase->write(MCP9800ADDR, readtemp, sizeof(readtemp), 0);
 	//_i2cbase->bus_wait();
 	_i2cbase->read(MCP9800ADDR, temp, sizeof(temp), 0);
-	return ((temp[0]<<8)|temp[1]);
+	f_tempC = ((temp[0]<<8)|temp[1]);       //int to float
+	f_tempC = f_tempC / 256;        		//convert to Cersius
+	f_tempF = f_tempC * 9 / 5 + 32;
+	return f_tempC;
 }
 ```
 
