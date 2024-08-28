@@ -5,9 +5,14 @@
 👀 Project structure
 
 -CPPLib
+
    ¦--GPIObase
+   
    ¦--I2Cbase
+   
    ¦--ISRbase
+
+   
 -Samples
    ¦--CPP_AND_C
    	¦--Core
