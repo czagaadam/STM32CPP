@@ -36,5 +36,10 @@
 			<type>2</type>
 			<location>D:/DEV/STM32/cpplib/I2Cbase</location>
 		</link>
+		<link>
+			<name>I2Cdevices</name>
+			<type>2</type>
+			<location>D:/DEV/STM32/cpplib/I2Cdevices</location>
+		</link>
 	</linkedResources>
 </projectDescription>

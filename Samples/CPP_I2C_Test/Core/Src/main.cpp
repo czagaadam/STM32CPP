@@ -1,25 +1,13 @@
-/* USER CODE BEGIN Header */
-/**
- ******************************************************************************
- * @file           : main.c
- * @brief          : Main program body
- ******************************************************************************
- * @attention
+/*
+ * main.cpp
  *
- * Copyright (c) 2024 STMicroelectronics.
- * All rights reserved.
+ *  Author: Adam Czaga czagaadam@gmail.com
  *
- * This software is licensed under terms that can be found in the LICENSE file
- * in the root directory of this software component.
- * If no LICENSE file comes with this software, it is provided AS-IS.
+ *	main.cpp for CPP_I2C_Test
  *
- ******************************************************************************
  */
-/* USER CODE END Header */
-/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "i2c.h"
-#include "tim.h"
 #include "gpio.h"
 #include "usart.h"
 #include "GPIObase.h"
@@ -160,7 +148,6 @@ int main(void) {
 	/* Initialize all configured peripherals */
 	MX_GPIO_Init();
 	MX_I2C3_Init();
-	MX_TIM1_Init();
 	MX_UART5_Init();
 	/* USER CODE BEGIN 2 */
 
