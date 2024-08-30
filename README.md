@@ -13,8 +13,9 @@ Library:
 https://github.com/czagaadam/STM32CPP/tree/main/CLib/vl53l0x
 
 ![ezgif-3-215e3da3ee](https://github.com/user-attachments/assets/b7b306ba-a284-4b91-bb14-45fb7144f6af)
+
 Sensor value trasmitted vai CAN bus
-![ls2-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/826a10dc-1cc4-47f8-bc56-af2944094e2e)
+![ls2-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a8e1880f-db11-4483-8f4f-850737742c52)
 
 
 
