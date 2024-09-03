@@ -32,47 +32,55 @@ extern "C" {
 }
 #endif
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
+Dout Led1;
+Din Btn1;
 
-/* USER CODE END Includes */
+void UART_SendString(char sdata[]) {
+	HAL_UART_Transmit(&huart5, (uint8_t*) (sdata), strlen(sdata), 10);
+	HAL_UART_Transmit(&huart5, (uint8_t*) "\r\n", 2, 10);
+}
 
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
+void UART_SendInt(int num) {
+	char sdata[10] = "";
+	sprintf(sdata, "%d", num);
+	HAL_UART_Transmit(&huart5, (uint8_t*) (sdata), strlen(sdata), 10);
+}
 
-/* USER CODE END PTD */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
+	Btn1.trigger_pin(GPIO_Pin);
+}
 
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
+void Btn1_call_back(void) {
+	Led1.write(GPIO_PIN_SET);
+}
 
-/* USER CODE END PD */
+void I2C3_EV_IRQHandler(void) {
+	HAL_I2C_EV_IRQHandler(&hi2c3);
+}
 
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
+void HAL_I2C_EV_IRQHandler() {
 
-/* USER CODE END PM */
+}
 
-/* Private variables ---------------------------------------------------------*/
+void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c) {
+	char ConvertBuffer2[30] = "";
+	if (hi2c->Devaddress == 0x92) {
+		sprintf(ConvertBuffer2, "Tenp sensor callback");
+		UART_SendString(ConvertBuffer2);
+	} else if (hi2c->Devaddress == 0x40) {
+		sprintf(ConvertBuffer2, "Port exp. callback");
+		UART_SendString(ConvertBuffer2);
+	} else if (hi2c->Devaddress == 0x9A) {
+		sprintf(ConvertBuffer2, "ADC callback");
+		UART_SendString(ConvertBuffer2);
+	} else {
+		sprintf(ConvertBuffer2, "Unknown dev. callback");
+		UART_SendString(ConvertBuffer2);
+	}
+}
 
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
- * @brief  The application entry point.
- * @retval int
- */
 
 uint16_t sensor1_mm = 0;
 uint16_t sensor2_mm = 0;
@@ -80,36 +88,42 @@ uint16_t sensor2_mm = 0;
 const uint8_t numofsensors = 1;
 
 int main(void) {
-//GPIOD->BSRR = (uint32_t)GPIO_PIN_15 << 16U;
+	//GPIOD->BSRR = (uint32_t)GPIO_PIN_15 << 16U;
 	GPIOD->BSRR = (uint32_t) GPIO_PIN_14 << 16U;
 	HAL_Init();
 	SystemClock_Config();
 	MX_GPIO_Init();
 	MX_I2C3_Init();
 	MX_CAN1_Init();
-//HAL_GPIO_WritePin(GPIOD,GPIO_PIN_15,GPIO_PIN_RESET);
+	MX_UART5_Init();
+
+	Led1 = Dout(GPIOD, GPIO_PIN_9, GPIO_PIN_RESET);
+	Btn1 = Din(GPIOD, GPIO_PIN_10);
+	Btn1.set_isr_cb(Btn1_call_back);
+
+	//HAL_GPIO_WritePin(GPIOD,GPIO_PIN_15,GPIO_PIN_RESET);
 	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-//memory allocation for VL53L0X_Dev_t structures and gpio pins
+	//memory allocation for VL53L0X_Dev_t structures and gpio pins
 	VL53L0X_InitHandlerClass(numofsensors);
-//initialize VL53L0X_Dev_t structure, shutdown pin, comm type, speed, address
-//todo: return index number
-//VL53L0X_DefineAndPutDevice(GPIO_PIN_15, 1, 100, 0x60);
+	//initialize VL53L0X_Dev_t structure, shutdown pin, comm type, speed, address
+	//todo: return index number
+	//VL53L0X_DefineAndPutDevice(GPIO_PIN_15, 1, 100, 0x60);
 	HAL_Delay(500);
 	VL53L0X_APPSConfigDevice(&hi2c3, GPIOD, GPIO_PIN_14, 1, 100, 0x22);
 	HAL_Delay(500);
-//shutdown pins low state
+	//shutdown pins low state
 	VL53L0X_APPSResetNodes();
 	HAL_Delay(500);
-//set new address for 1st sensor
-//VL53L0X_ActiveNodeAddress(1);
+	//set new address for 1st sensor
+	//VL53L0X_ActiveNodeAddress(1);
 	HAL_Delay(500);
-//initialize sensor with custom address
-//VL53L0X_APPStartCustomAddress(1);
+	//initialize sensor with custom address
+	//VL53L0X_APPStartCustomAddress(1);
 	HAL_Delay(500);
-//set new address for 2nd sensor
+	//set new address for 2nd sensor
 	VL53L0X_APPSSetAddress(0);
 	HAL_Delay(500);
-//initialize sensor with custom address
+	//initialize sensor with custom address
 	VL53L0X_APPStartWithCustomAddress(0);
 	HAL_Delay(500);
 
@@ -117,11 +131,13 @@ int main(void) {
 	uint8_t *data;
 	uint32_t txMailBox;
 	CAN_TxHeaderTypeDef header;
+
 	header.DLC = 8;
 	header.IDE = CAN_ID_STD;
 	header.RTR = CAN_RTR_DATA;
 	header.StdId = 0x200;
 	data = (uint8_t*) calloc(8, sizeof(uint8_t));
+
 	while (1) {
 		HAL_GPIO_WritePin(GPIOD, GPIO_PIN_9, GPIO_PIN_SET);
 		HAL_Delay(sensor1_mm);
@@ -130,8 +146,7 @@ int main(void) {
 		//sensor1_mm = VL53L0X_NodeMeasure(1);
 		//HAL_Delay(500);
 		sensor1_mm = VL53L0X_APPSNodeMeasure(0);
-		uint8_t tmpdata[8] = { sensor1_mm, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07,
-				0x08 };
+		uint8_t tmpdata[8] = { sensor1_mm, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08 };
 		memcpy(data, tmpdata, 8);
 		HAL_CAN_AddTxMessage(&hcan1, &header, data, &txMailBox);
 	}

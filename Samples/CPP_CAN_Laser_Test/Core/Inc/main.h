@@ -1,22 +1,11 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2024 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
+/*
+ * main.h
+ *
+ *  Author: Adam Czaga czagaadam@gmail.com
+ *
+ *	main.h for CPP_CAN_Laser_Test
+ *
+ */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
@@ -151,10 +140,6 @@ void Error_Handler(void);
 #define G4_GPIO_Port GPIOB
 #define G5_Pin GPIO_PIN_11
 #define G5_GPIO_Port GPIOB
-#define OTG_HS_ID_Pin GPIO_PIN_12
-#define OTG_HS_ID_GPIO_Port GPIOB
-#define VBUS_HS_Pin GPIO_PIN_13
-#define VBUS_HS_GPIO_Port GPIOB
 #define OTG_HS_DM_Pin GPIO_PIN_14
 #define OTG_HS_DM_GPIO_Port GPIOB
 #define OTG_HS_DP_Pin GPIO_PIN_15
@@ -222,10 +207,6 @@ void Error_Handler(void);
 #define SDCKE1_GPIO_Port GPIOB
 #define SDNE1_Pin GPIO_PIN_6
 #define SDNE1_GPIO_Port GPIOB
-#define B6_Pin GPIO_PIN_8
-#define B6_GPIO_Port GPIOB
-#define B7_Pin GPIO_PIN_9
-#define B7_GPIO_Port GPIOB
 #define NBL0_Pin GPIO_PIN_0
 #define NBL0_GPIO_Port GPIOE
 #define NBL1_Pin GPIO_PIN_1
