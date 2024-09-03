@@ -12,7 +12,7 @@ https://github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_AND_C
 Library:
 https://github.com/czagaadam/STM32CPP/tree/main/CLib/vl53l0x
 
-![ezgif-3-215e3da3ee](https://github.com/user-attachments/assets/b7b306ba-a284-4b91-bb14-45fb7144f6af)
+![ezgif-3-215e3da3ee](https://github.com/user-attachments/assets/b7b306ba-a284-4b91-bb14-45fb7144f6af)![ls2-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/ba212cd2-769d-4d10-923a-63d274446f8b)
 
 # I2C class
 I2C class is uploded, find here an example how to use the I2C class for MCP3221 ADC, MCP9800 temp. sensor and MCP2308 port expander:
