@@ -1,21 +1,24 @@
 # STM32CPP
 🌟 About the Project
 
-# VL53L0x
-VL53L0x distance sensor library is uploaded. VL53L0x library is written in C, in this simple example you can see how to use the library and mix with C++ code.
-The core library is the property of STM, I made some smaller modifications and the higher abstraction layer is created by me.
+# 📏 VL53L0X Distance Sensor Integration
+The VL53L0X distance sensor library is now available.
 
+The core driver, originally written in C by STMicroelectronics, has been lightly modified for easier integration. On top of that, I’ve implemented a high-level abstraction layer to simplify usage and enable clean interoperability with modern C++ code.
 
-Sample:
-https://github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_AND_C
+- This simple example demonstrates how to:
 
-Library:
-https://github.com/czagaadam/STM32CPP/tree/main/CLib/vl53l0x
+- Integrate the C-based VL53L0X library into a C++ project
 
-![ezgif-3-215e3da3ee](https://github.com/user-attachments/assets/b7b306ba-a284-4b91-bb14-45fb7144f6af)
+- Mix low-level C drivers with C++ abstractions
 
-Sensor value trasmitted vai CAN bus
-![ls2-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/a8e1880f-db11-4483-8f4f-850737742c52)
+- Set up basic usage in an STM32 environment
+
+# 🔗 Sample project:
+github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_AND_C
+
+# 📚 VL53L0X Library source:
+github.com/czagaadam/STM32CPP/tree/main/CLib/vl53l0x
 
 
 
