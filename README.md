@@ -13,10 +13,10 @@ This simple example demonstrates how to:
 
 - Set up basic usage in an STM32 environment
 
-# 🔗 Sample project:
+🔗 Sample project:
 github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_AND_C
 
-# 📚 VL53L0X Library source:
+📚 VL53L0X Library source:
 github.com/czagaadam/STM32CPP/tree/main/CLib/vl53l0x
 
 
