@@ -6,7 +6,7 @@ The VL53L0X distance sensor library is now available.
 
 The core driver, originally written in C by STMicroelectronics, has been lightly modified for easier integration. On top of that, I’ve implemented a high-level abstraction layer to simplify usage and enable clean interoperability with modern C++ code.
 
-- This simple example demonstrates how to:
+This simple example demonstrates how to:
 
 - Integrate the C-based VL53L0X library into a C++ project
 
