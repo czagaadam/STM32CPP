@@ -1,5 +1,4 @@
 # STM32CPP
-🌟 About the Project
 
 # 📏 VL53L0X Distance Sensor Integration
 The VL53L0X distance sensor library is now available.
@@ -22,9 +21,20 @@ github.com/czagaadam/STM32CPP/tree/main/CLib/vl53l0x
 
 
 
-# I2C class
-I2C class is uploded, find here an example how to use the I2C class for MCP3221 ADC, MCP9800 temp. sensor and MCP2308 port expander:
+# 🔌 I2C Class – Example Usage
+The custom I2C class has been uploaded and is now available for use.
 
-https://github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_I2C_Test
+In this example, you’ll find a practical demonstration of how to utilize the I2C class to interface with the following devices:
+
+# 🧪 MCP3221 – 12-bit ADC
+
+# 🌡️ MCP9800 – Temperature sensor
+
+# 📦 MCP23008 – I/O port expander
+
+# 🔗 Example project:
+github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_I2C_Test
+
+This sample shows how to handle communication with multiple I2C peripherals using clean and reusable C++ abstractions.
 
 ![ezgif-1-fc8456bf6d](https://github.com/user-attachments/assets/9b2483c4-fbea-4ccf-89f5-9ef2931af1e5)
