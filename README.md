@@ -26,13 +26,13 @@ The custom I2C class has been uploaded and is now available for use.
 
 In this example, you’ll find a practical demonstration of how to utilize the I2C class to interface with the following devices:
 
-# 🧪 MCP3221 – 12-bit ADC
+- 🧪 MCP3221 – 12-bit ADC
 
-# 🌡️ MCP9800 – Temperature sensor
+- 🌡️ MCP9800 – Temperature sensor
 
-# 📦 MCP23008 – I/O port expander
+- 📦 MCP23008 – I/O port expander
 
-# 🔗 Example project:
+- 🔗 Example project:
 github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_I2C_Test
 
 This sample shows how to handle communication with multiple I2C peripherals using clean and reusable C++ abstractions.
