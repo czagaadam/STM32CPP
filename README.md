@@ -38,3 +38,6 @@ github.com/czagaadam/STM32CPP/tree/main/Samples/CPP_I2C_Test
 This sample shows how to handle communication with multiple I2C peripherals using clean and reusable C++ abstractions.
 
 ![ezgif-1-fc8456bf6d](https://github.com/user-attachments/assets/9b2483c4-fbea-4ccf-89f5-9ef2931af1e5)
+
+# 🛠️ Build System 
+The entire build and configuration was made in STM32CubeIDE. 
